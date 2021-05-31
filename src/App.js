@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Todo from "./components/TodoList/Todo";
+import NewTodo from "./components/NewTodoList/NewTodo";
 
 function App() {
   const [todo, setTodo] = useState([
@@ -18,13 +19,20 @@ function App() {
     },
   ]);
 
+  let current_id = 4;
+
   const deleteTodo = (index) => {
     setTodo((prevState) => prevState.filter((x) => x.id !== index));
   };
 
+  const addTodo = (addTodo) => {
+    setTodo((prevState) => [...prevState, addTodo]);
+    current_id++;
+  };
+
   return (
     <div>
-      <div> Hello there</div>
+      <NewTodo currId={current_id} onClickAdd={addTodo} />
       <Todo todoList={todo} onClickDelete={deleteTodo} />
     </div>
   );

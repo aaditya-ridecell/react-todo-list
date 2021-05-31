@@ -1,6 +1,5 @@
 import React from "react";
 import TodoItem from "./TodoItem";
-import "./Todo.css";
 import Container from "@material-ui/core/Container";
 
 const Todo = (props) => {

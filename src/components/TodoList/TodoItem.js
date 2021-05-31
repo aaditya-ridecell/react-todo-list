@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core";
+import { Grid, Tooltip } from "@material-ui/core";
 import "./TodoItem.css";
 import IconButton from "@material-ui/core/IconButton";
 import ClearIcon from "@material-ui/icons/Clear";
@@ -50,14 +50,16 @@ const TodoItem = (props) => {
           {props.title}
         </Grid>
         <Grid item xs={1}>
-          <IconButton
-            style={buttonStyle.style}
-            color="secondary"
-            aria-label="Delete"
-            onClick={deleteTodoItem}
-          >
-            <ClearIcon />
-          </IconButton>
+          <Tooltip title="Delete" placement="right" arrow>
+            <IconButton
+              style={buttonStyle.style}
+              color="secondary"
+              aria-label="Delete"
+              onClick={deleteTodoItem}
+            >
+              <ClearIcon />
+            </IconButton>
+          </Tooltip>
         </Grid>
       </Grid>
     </div>
