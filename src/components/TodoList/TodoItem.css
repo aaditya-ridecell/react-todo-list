@@ -1,0 +1,8 @@
+.todoitem {
+  padding: 1rem;
+  background-color: #fb6542;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  color: white;
+  margin: 1rem;
+  min-height: 50px;
+}
