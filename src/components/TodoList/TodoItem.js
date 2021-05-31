@@ -13,6 +13,10 @@ const TodoItem = (props) => {
     },
   });
 
+  const deleteTodoItem = () => {
+    props.onClickDelete(props.id);
+  };
+
   return (
     <div
       className="todoitem"
@@ -50,6 +54,7 @@ const TodoItem = (props) => {
             style={buttonStyle.style}
             color="secondary"
             aria-label="Delete"
+            onClick={deleteTodoItem}
           >
             <ClearIcon />
           </IconButton>

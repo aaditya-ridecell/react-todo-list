@@ -4,11 +4,20 @@ import "./Todo.css";
 import Container from "@material-ui/core/Container";
 
 const Todo = (props) => {
+  const deleteTodoItem = (id) => {
+    props.onClickDelete(id);
+  };
+
   return (
     <Container maxWidth="md">
       <div>
         {props.todoList.map((todo) => (
-          <TodoItem key={todo.id} title={todo.title} />
+          <TodoItem
+            key={todo.id}
+            id={todo.id}
+            title={todo.title}
+            onClickDelete={deleteTodoItem}
+          />
         ))}
       </div>
     </Container>
